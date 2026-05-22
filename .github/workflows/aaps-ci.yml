@@ -158,7 +158,7 @@ jobs:
           DECODED=$(echo "${{ secrets.GDRIVE_OAUTH2 }}" | base64 -d)
 
           GDRIVE_CLIENT_ID=$(echo "$DECODED" | cut -d'|' -f1)
-          GDRIVE_REFRESH_SECRET=$(echo "$DECODED" | cut -d'|' -f2)
+          GDRIVE_CLIENT_SECRET=$(echo "$DECODED" | cut -d'|' -f2)
           GDRIVE_REFRESH_TOKEN=$(echo "$DECODED" | cut -d'|' -f3)
 
           echo "::add-mask::$GDRIVE_CLIENT_ID"
